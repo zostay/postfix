@@ -1,6 +1,15 @@
 #!/bin/sh
 
-cp -v /usr/local/share/postfix/postfix-files /etc/postfix/postfix-files
+for file in postfix-files post-install post-script; do
+    if [ ! -e "/etc/postfix/$file" ]; then
+        cp -v "/usr/local/share/postfix/$file" "/etc/postfix/$file"
+
+        if [ ! -f "/etc/postfix/$file" ]; then
+            echo "FAILED TO COPY $file"
+        fi
+    fi
+done
+
 apt-get --fix-broken install
 
 ls -la /usr/local/share/postfix
