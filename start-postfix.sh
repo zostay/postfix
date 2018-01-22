@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for file in postfix-files post-install post-script; do
+for file in postfix-files post-install postfix-script; do
     if [ ! -e "/etc/postfix/$file" ]; then
         cp -v "/usr/local/share/postfix/$file" "/etc/postfix/$file"
 
