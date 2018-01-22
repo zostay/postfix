@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for path in /etc/postfix.overrides/* do
+for path in /etc/postfix.overrides/*; do
     file=$(basename $path)
 
     echo "Linking /etc/postfix/$file -> $path"
