@@ -9,4 +9,6 @@ done
 
 apt-get --fix-broken install
 
-postfix start && while [ true ]; do journalctl -f; sleep 1; done
+service syslog-ng start \
+    && postfix start \
+    && journalctl -f
