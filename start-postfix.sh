@@ -9,4 +9,4 @@ done
 
 apt-get --fix-broken install
 
-postfix start && journalctl -f
+postfix start && while [ true ]; do journalctl -f; sleep 1; done
