@@ -3,7 +3,8 @@ LABEL maintainer="Sterling Hanenkamp \"sterling@hanenkamp.com\""
 
 RUN apt-get update \
     && apt-get -y install postfix syslog-ng \
-    && mkdir -p /etc/postfix.overrides
+    && mkdir -p /etc/postfix.overrides \
+    && sed -i s/OPTS=""/OPTS="--no-caps"/ /etc/init/syslog-ng.conf
 
 COPY start-postfix.sh /sbin/start-postfix.sh
 
