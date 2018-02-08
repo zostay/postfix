@@ -9,5 +9,8 @@ done
 
 apt-get --fix-broken install
 
+# Make sure mail.log exists first
+touch /var/log/mail.log
+
 service syslog-ng start
-postfix start && journalctl -f
+postfix start && tail -F /var/log/mail.log
