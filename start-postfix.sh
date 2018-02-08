@@ -9,7 +9,5 @@ done
 
 apt-get --fix-broken install
 
-# service syslog-ng start \
-#     && postfix start \
-#     && journalctl -f
+service syslog-ng start
 postfix start && journalctl -f
