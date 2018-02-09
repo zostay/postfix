@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 for path in /etc/postfix.overrides/*; do
     file=$(basename $path)
 
