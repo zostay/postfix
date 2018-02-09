@@ -14,5 +14,7 @@ apt-get --fix-broken install
 # Make sure mail.log exists first
 touch /var/log/mail.log
 
+[ -f /etc/postfix.overrides/postfix.init ] && source /etc/postfix.overrides/postfix.init
+
 service syslog-ng start
 postfix start && tail -F /var/log/mail.log
