@@ -1,12 +1,12 @@
 #!/bin/sh
 
-set -x
+#set -x
 
 for path in /etc/postfix.overrides/*; do
     file=$(basename $path)
 
     echo "Linking /etc/postfix/$file -> $path"
-    ln -sf /etc/postfix/$file $path
+    ln -sf $path /etc/postfix/$file
 done
 
 apt-get --fix-broken install
