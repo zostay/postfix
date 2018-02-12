@@ -11,10 +11,12 @@ done
 
 apt-get --fix-broken install
 
-# Make sure mail.log exists first
-#touch /var/log/mail.log
-/etc/init.d/postfix start
-/etc/init.d/postfix abort
+# Make sure mail exists first
+touch /var/log/mail.log
+touch /var/log/mail.info
+touch /var/log/mail.warn
+touch /var/log/mail.err
+
 
 [ -f /etc/postfix.overrides/postfix.init ] && . /etc/postfix.overrides/postfix.init
 
