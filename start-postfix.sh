@@ -13,5 +13,5 @@ apt-get --fix-broken install
 
 [ -f /etc/postfix.overrides/postfix.init ] && . /etc/postfix.overrides/postfix.init
 
-service syslog-ng start
+/usr/sbin/syslog-ng -F --no-caps &
 postfix start && while [ true ]; do sleep 1000; done
