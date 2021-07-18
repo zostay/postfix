@@ -22,4 +22,4 @@ values = ddb.update_item(
     },
 )
 
-print values['Attributes']['BuildCounter']['N']
+print(values['Attributes']['BuildCounter']['N'])
