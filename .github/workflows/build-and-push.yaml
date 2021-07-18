@@ -6,6 +6,7 @@ on:
   push:
     branches: [ master ]
 
+jobs:
   build:
     name: Build and Push to Docker Hub
     runs-on: ubuntu-latest
