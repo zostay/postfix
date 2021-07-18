@@ -28,7 +28,7 @@ jobs:
     - name: Update Build Number
       env:
         BUILD_TAG: ${{ secrets.BUILD_TAG }}
-      run: "echo BUILD_COUNTER-$(python build-number.py $BUILD_TAG) >> $GITHUB_ENV"
+      run: "echo BUILD_COUNTER=$(python build-number.py $BUILD_TAG) >> $GITHUB_ENV"
     - run: "echo Build $BUILD_COUNTER"
     - uses: docker/build-push-action@v2
       with:
