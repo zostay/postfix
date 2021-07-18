@@ -9,5 +9,5 @@ build_tag = sys.argv[1]
 
 fn.invoke(
     FunctionName   = "QublingWordpressBuildNotifier",
-    Payload        = b'{"BuildTag":"' + bytearray(build_tag) + b'"}'
+    Payload        = b'{"BuildTag":"' + bytearray(build_tag, "utf-8") + b'"}'
 )
